@@ -10,9 +10,10 @@ The project is intended for users who store their information in MongoDB, but wi
 
 The project was carried out using Kalman filter based on the current sugar state and the change from the previous state. To read more about the [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter).
 
-
-[](exampls\bot_init_gif.gif)
-[](exampls\unwanted_bg_level_msg.jpeg)
+<div>
+<img src="https://github.com/orineo1/predicting_sugar_level_T1D/blob/main/exampls/bot_init_gif.gif" width="400" height="700">
+<img src="https://github.com/orineo1/predicting_sugar_level_T1D/blob/main/exampls/unwanted_bg_level_msg.jpeg" width="400" height="700">
+</div>
 
 ### **Installation**
 1. All files must be downloaded into one folder.
