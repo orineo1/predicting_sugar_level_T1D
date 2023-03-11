@@ -1,0 +1,9 @@
+
+URI_MONGO-
+DB_NAME-
+COLLECTION_NAME-
+ALLOWED_IDS-number_of_first_Allowed_ID,number_of_second_AllowedID e.g. 123456,1245663
+TOKEN-
+UPPER_BOUND-
+LOWER_BOUND-
+Threshold_Alerts-
