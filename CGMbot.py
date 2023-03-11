@@ -162,9 +162,9 @@ async def start_pred_algorithm(update: Update, context = ContextTypes.DEFAULT_TY
     global total_pred, ALLOWED_IDS
 
     # If the user is not authorized, stop
-    chat_id = update.effective_message.chat_id
+    chat_id = update.message.chat_id
     if chat_id not in ALLOWED_IDS:
-        await update.effective_message.reply_text("You do not have permissions to perform this action")
+        await update.message.reply_text("You do not have permissions to perform this action")
         return
     
     # Resetting the forecast table
@@ -180,7 +180,7 @@ async def start_pred_algorithm(update: Update, context = ContextTypes.DEFAULT_TY
     text = "Start predection algorithem"
     if job_removed:
         text += ". Old one was removed."
-    await update.effective_message.reply_text(text)
+    await update.message.reply_text(text)
 
 
 async def terminate_pred_algorithm (update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -234,9 +234,9 @@ async def last_5_bg(update: Update, context: ContextTypes.DEFAULT_TYPE,collectio
     """Sending the user the last 5 BG values"""
 
     # If the user is not authorized, stop
-    chat_id = update.effective_message.chat_id
+    chat_id = update.message.chat_id
     if chat_id not in ALLOWED_IDS:
-        await update.effective_message.reply_text("You do not have permissions to perform this action")
+        await update.message.reply_text("You do not have permissions to perform this action")
         return
 
     last_5_bg = predKalman.currnet_bg_val(collection_mongo,5)
@@ -249,9 +249,9 @@ async def next_bg(update: Update, context: ContextTypes.DEFAULT_TYPE,collection_
     """Show the user the last 5 sugar values"""
 
     # If the user is not authorized, stop
-    chat_id = update.effective_message.chat_id
+    chat_id = update.message.chat_id
     if chat_id not in ALLOWED_IDS:
-        await update.effective_message.reply_text("You do not have permissions to perform this action")
+        await update.message.reply_text("You do not have permissions to perform this action")
         return
     
     # Conversion of values smaller than 40 to be "Low" - known convention
