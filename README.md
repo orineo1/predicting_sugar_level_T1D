@@ -48,7 +48,7 @@ The project was carried out using Kalman filter based on the current sugar state
      <span style="text-decoration: underline">Without being modest, the complx_snooze is an excellent idea that should be applied to all the tools used to help with diabetes. It is more accurate for the users and I saw that my examinee was happy with it. </span>
 
 
-- **/next_5_bg** - Gives the prediction for the next 5 readings.
+- **/next_bg** - Gives the prediction for the next 3 readings.
 
 - **/last_5_bg** - Gives the sugar values for the previous 5 readings.
 
@@ -60,8 +60,3 @@ It was a very fascinating project because on the one hand, it was to make a tool
 I will point out that the tool is not state of the art. However, after testing it for days in relation to the tools that exist today, it showed pretty good predictions. A calculation of the MSE for the prediction success for the next 2 readings for a large sample of random data was approximately ~240 (I added a function to calcualte the MSE at the end of predictBGKalmnFilter.py).
 
 **Plans for the future** -  improve the algorithm and instead of predicting the sugar levels using the change and the previous sugar levels, add to the Kalman Filter features like the amount of active carbohydrates in the body and the levels of active insulin. For this purpose, I thought of using a non-parametric regression and thereby estimating the weights of each of the different features.
-
-
- 
-About
-A project that uses a Kalman filter and a Telegram bot that predicts and warns of undesirable sugar values. Inteneded for type 1 diabetics.
