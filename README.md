@@ -8,11 +8,11 @@ The purpose of this project is to predict the sugar levels of people with juveni
 The project is intended for users who store their information in MongoDB, but with the necessary adjustments it can be adapted to other databases.
 
 
-The project was carried out using Kalman filter based on the current sugar state and the change from the previous state. To read more about the [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter).
+The project was carried out using Kalman filter based on the current sugar state and the change from the previous state. To read more about the [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter). I'll note that unlike a normal Kalman filter, each set of predictions is made by clean matrices and vectors that are updated on the last 9 observations and only after that the forecast is given - this is designed to allow greater flexibility for forecasting due the rapid changes of sugar levels. The MSE calculation of the model appears in the Summary sections.
 
 <div>
 <img src="https://github.com/orineo1/predicting_sugar_level_T1D/blob/main/exampls/bot_init_gif.gif" width="400" height="700">
-<img src="https://github.com/orineo1/predicting_sugar_level_T1D/blob/main/exampls/unwanted_bg_level_msg.jpeg" width="400" height="700">
+<img src="https://github.com/orineo1/predicting_sugar_level_T1D/blob/main/exampls/msg_exampls.jpeg" width="400" height="700">
 </div>
 
 ### **Installation**
@@ -57,6 +57,14 @@ The project was carried out using Kalman filter based on the current sugar state
 ### **Summary**
 It was a very fascinating project because on the one hand, it was to make a tool for a close person in order to improve their quality of life, and on the other hand, it was an opportunity to implement statistical and theoretical tools in practice.
 
-I will point out that the tool is not state of the art. However, after testing it for days in relation to the tools that exist today, it showed pretty good predictions. A calculation of the MSE for the prediction success for the next 2 readings for a large sample of random data was approximately ~240 (I added a function to calcualte the MSE at the end of predictBGKalmnFilter.py).
+I will point out that the tool is not state of the art. However, after testing it for days in relation to the tools that exists today, it showed a good predictions from the experimenter's side. If we do it in a more rigorous way, I added  MSE* table for a number of different forecasts. The MSE is only about the x prediction - let's say only about the third prediction ahead.
+
+
+| 1 reading | 2 reading | 3 reading | 4 reading | 5 reading |
+|----------|----------|----------|----------|----------|
+| 69.75 | 142.49| 285.78 | 461.51 | 731.78 |
+
+
+\*  40K random time starts were choosen and predicted the x reading ahead. 
 
 **Plans for the future** -  improve the algorithm and instead of predicting the sugar levels using the change and the previous sugar levels, add to the Kalman Filter features like the amount of active carbohydrates in the body and the levels of active insulin. For this purpose, I thought of using a non-parametric regression and thereby estimating the weights of each of the different features.
