@@ -16,7 +16,7 @@ import predictBGKalmnFilter as predKalman # Import functions from the predictBGK
 init_data_dict = {}
 
 # Open the text file for reading
-with open('info_for_the_pred_algorithm - ORI.txt', 'r') as file:
+with open('info_for_the_pred_algorithm.txt', 'r') as file:
     # Loop over each line in the file
     for line in file.readlines():
 
